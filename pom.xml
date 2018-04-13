@@ -78,6 +78,13 @@
             <groupId>com.fasterxml.jackson.module</groupId>
             <artifactId>jackson-module-parameter-names</artifactId>
         </dependency>
+        <!--lombok-->
+        <!--<dependency>-->
+            <!--<groupId>org.projectlombok</groupId>-->
+            <!--<artifactId>lombok</artifactId>-->
+            <!--<version>1.16.18</version>&lt;!&ndash;  &ndash;&gt;-->
+        <!--</dependency>-->
+
         <!-- 分页插件 -->
         <!--<dependency>-->
         <!--<groupId>com.github.pagehelper</groupId>-->
