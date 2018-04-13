@@ -9,4 +9,11 @@ public interface UserService {
     int addUser();
 
     List<User> getUserAll();
+
+    /**
+     * 测试
+     * @return
+     */
+    User save();
+
 }
