@@ -53,7 +53,7 @@ public class TestBootController {
      */
     @GetMapping(value = "/UserList")
     public ResultVo<User> getUserTest(){
-        List<User> userAll = userService.getUserAll();
+        List<User> userAll = userService.getUserList();
         return ResultUtil.success(userAll);
     }
 
