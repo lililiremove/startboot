@@ -1,6 +1,7 @@
 package com.startboot.dev.controller;
 
 import com.startboot.dev.Vo.ResultVo;
+import com.startboot.dev.exception.StartBootException;
 import com.startboot.dev.pojo.User;
 import com.startboot.dev.service.UserService;
 import com.startboot.dev.util.ResultUtil;
@@ -18,18 +19,17 @@ public class TestBootController {
     private UserService userService;
 
     @PostMapping(value = "/addUser")
-    public String addUser(){
-        String flag=null;
+    public ResultVo addUser(){
         int i = userService.addUser();
         if (i>0){
-            return flag="插入成功";
+            return ResultUtil.success();
+        }else{
+            throw new StartBootException(400,"插入失败");
         }
-        return flag;
     }
 
     @GetMapping(value = "/getUserAll")
     public Object getUserAll(){
-        String flag=null;
         List<User> userAll = userService.getUserAll();
         if (userAll.size()>0){
             return userAll;

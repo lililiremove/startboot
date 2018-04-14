@@ -4,6 +4,7 @@ import com.startboot.dev.pojo.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**
+ *DAO
  *
  * 使用JpaRepository
  *
