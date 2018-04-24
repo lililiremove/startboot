@@ -79,12 +79,6 @@
             <groupId>com.fasterxml.jackson.module</groupId>
             <artifactId>jackson-module-parameter-names</artifactId>
         </dependency>
-        <!--lombok-->
-        <!--<dependency>-->
-            <!--<groupId>org.projectlombok</groupId>-->
-            <!--<artifactId>lombok</artifactId>-->
-            <!--<version>1.16.18</version>&lt;!&ndash;  &ndash;&gt;-->
-        <!--</dependency>-->
 
         <!-- 分页插件 -->
         <!--<dependency>-->
@@ -105,7 +99,6 @@
             <version>7.1.0</version>
         </dependency>
 
-
         <!--操作数据库-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -123,8 +116,6 @@
             <groupId>com.google.code.gson</groupId>
             <artifactId>gson</artifactId>
         </dependency>
-
-
     </dependencies>
 
     <build>
