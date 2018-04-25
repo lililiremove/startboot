@@ -7,7 +7,7 @@ spring:
     #url,加入ssl配置避免报错
     url: jdbc:mysql://127.0.0.1:3306/startboot?characterEncoding=UTF8&useSSL=false
     username: root
-    password: 123
+    password: buzhidao
     type: com.alibaba.druid.pool.DruidDataSource
     driver-class-name: com.mysql.jdbc.Driver
     max-idle: 5
