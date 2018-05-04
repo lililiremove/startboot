@@ -84,4 +84,10 @@
   <select id="selectUserAll" resultMap="BaseResultMap">
     SELECT <include refid="Base_Column_List"/> FROM USER
   </select>
+
+  <select id="selectUserByUsername" resultType="User" parameterType="String">
+    SELECT <include refid="Base_Column_List"/> FROM USER u where u.username= #{username,jdbcType=VARCHAR}
+  </select>
+
+
 </mapper>

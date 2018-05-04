@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+    <title>登陆</title>
+    <link th:src="@{/js/jquery/jquery.js}"/>
+</head>
+<body>
+<div style="width: auto; height:auto;margin-left: auto; margin-right: auto;">
+    <div style="color: rebeccapurple;font-size: 40px;font-family: 微软雅黑">登陆</div>
+    <form id="login-form" th:action="@{/login}" th:method="post">
+        <input type="text" id="username" name="username" required="required" placeholder="用户名"/>
+        <input type="password" id="password" name="password" required="required" placeholder="密码"/>
+        <button type="submit" id="login" onclick="isTrim()">登陆</button>
+        <label class="checkbox">
+            <input type="checkbox" value="remember-me" /> 记住我
+        </label>
+    </form>
+</div>
+</body>
+<script type="text/javascript" th:inline="javascript">
+
+    function isTrim() {
+        // /*<![CDATA[*/
+        // var basePath = /*[[${#httpServletRequest.getScheme() + "://" + #httpServletRequest.getServerName() + ":" + #httpServletRequest.getServerPort() + #httpServletRequest.getContextPath()}]]*/;
+        // /*]]>*/
+        var username = $("#username").val();
+        var password = $("#password").val();
+        if (username == "" || username == null) {
+            alert("用户名不能为空");
+            return;
+        }
+        if (password == "" || password == null) {
+            alert("密码不能为空");
+            return;
+        }
+
+        // $.ajax({
+        //     url: '/login',
+        //     type: 'post',
+        //     dataType: 'json',
+        //     data: {username:username,password:password},
+        //     success: function (data) {
+        //         alert(data);
+        //     }
+        // });
+    }
+
+
+</script>
+</html>

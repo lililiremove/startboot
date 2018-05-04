@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+    <title>首页</title>
+    <link th:src="@{/js/jquery/jquery.js}"/>
+</head>
+<body>
+<div style="height: auto;width:auto">
+    This is index
+    <a href="/toLogin">请登陆</a>
+</div>
+
+<div>
+    <p style="font-size: 10px;color: red" th:text="${MSG}"></p>
+</div>
+
+</body>
+<!--<script type="text/javascript" th:inline="javascript">-->
+
+<!--</script>-->
+</html>

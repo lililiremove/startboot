@@ -49,5 +49,16 @@ public class UserServiceImpl implements UserService {
         return userRepository.findAll();
     }
 
+    @Override
+    public int validationUser(User user) {
+        User userResult = userMapper.selectUserByUsername(user.getUsername());
+        if (user!=null&&userResult!=null){
+            if (userResult.getPassword()==user.getPassword()&&user.getPassword().equals(userResult.getPassword())){
+                return 1;
+            }
+        }
+        return 0;
+    }
+
 
 }

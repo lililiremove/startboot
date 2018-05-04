@@ -6,7 +6,6 @@ import com.startboot.dev.pojo.User;
 import com.startboot.dev.service.UserService;
 import com.startboot.dev.util.ResultUtil;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
