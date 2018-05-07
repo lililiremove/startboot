@@ -1,6 +1,6 @@
 package com.startboot.dev.mapper;
 
-import com.startboot.dev.pojo.User;
+import com.startboot.dev.pojo.entity.User;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;

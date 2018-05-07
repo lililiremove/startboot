@@ -1,6 +1,6 @@
 package com.startboot.dev.controller.login;
 
-import com.startboot.dev.pojo.User;
+import com.startboot.dev.pojo.entity.User;
 import com.startboot.dev.service.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

@@ -1,6 +1,6 @@
 package com.startboot.dev.util;
 
-import com.startboot.dev.Vo.ResultVo;
+import com.startboot.dev.pojo.Vo.ResultVo;
 
 /**
  * 返回结果

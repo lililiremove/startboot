@@ -1,6 +1,6 @@
 package com.startboot.dev.repository;
 
-import com.startboot.dev.pojo.User;
+import com.startboot.dev.pojo.entity.User;
 
 
 /**

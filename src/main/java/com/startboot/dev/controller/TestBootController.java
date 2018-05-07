@@ -1,8 +1,8 @@
 package com.startboot.dev.controller;
 
-import com.startboot.dev.Vo.ResultVo;
+import com.startboot.dev.pojo.Vo.ResultVo;
 import com.startboot.dev.exception.StartBootException;
-import com.startboot.dev.pojo.User;
+import com.startboot.dev.pojo.entity.User;
 import com.startboot.dev.service.UserService;
 import com.startboot.dev.util.ResultUtil;
 import org.springframework.beans.factory.annotation.Autowired;

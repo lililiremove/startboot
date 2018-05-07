@@ -2,7 +2,7 @@ package com.startboot.dev.service.impl;
 
 import com.startboot.dev.common.UUIDGenerator;
 import com.startboot.dev.mapper.UserMapper;
-import com.startboot.dev.pojo.User;
+import com.startboot.dev.pojo.entity.User;
 import com.startboot.dev.repository.UserRepository;
 import com.startboot.dev.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
