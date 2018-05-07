@@ -1,6 +1,10 @@
 #yml风格
 server:
   port: 8081
+logging:
+  level:
+    tk:
+     mybatis:TRACE
 
 spring:
   datasource:
