@@ -1,12 +1,14 @@
 package com.startboot.dev.controller;
 
 import com.startboot.dev.pojo.Vo.ResultVo;
-import com.startboot.dev.exception.StartBootException;
 import com.startboot.dev.pojo.entity.User;
 import com.startboot.dev.service.UserService;
 import com.startboot.dev.util.ResultUtil;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
@@ -17,15 +19,15 @@ public class TestBootController {
     @Autowired
     private UserService userService;
 
-    @PostMapping(value = "/addUser")
-    public ResultVo addUser(){
-        int i = userService.addUser();
-        if (i>0){
-            return ResultUtil.success();
-        }else{
-            throw new StartBootException(400,"插入失败");
-        }
-    }
+//    @PostMapping(value = "/addUser")
+//    public ResultVo addUser(){
+//        int i = userService.addUser();
+//        if (i>0){
+//            return ResultUtil.success();
+//        }else{
+//            throw new StartBootException(400,"插入失败");
+//        }
+//    }
 
     @GetMapping(value = "/getUserAll")
     public Object getUserAll(){

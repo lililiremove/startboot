@@ -11,7 +11,7 @@ import javax.servlet.Filter;
  * @Description 注册跨域过滤器
  *
  */
-@org.springframework.context.annotation.Configuration  
+@org.springframework.context.annotation.Configuration
 public class FilterConfig {
 	/**
      * 配置过滤器

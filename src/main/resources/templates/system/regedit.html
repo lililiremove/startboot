@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+    <title>注册</title>
+    <script th:src="@{/js/jquery/jquery.js}"></script>
+
+</head>
+<body>
+<div style="width: auto; height:auto;margin-left: auto; margin-right: auto;">
+    <div style="color: rebeccapurple;font-size: 40px;font-family: 微软雅黑">注册</div>
+    <form id="login-form" th:action="@{/regedit}" th:method="post" onsubmit="return checkLogin();">
+        <input type="text" id="username" name="username" required="required" placeholder="用户名"
+               onblur="nameExist()" onfocus="removeRedStart()"/> <span style="color:red;" id="redStart">*</span><br>
+        <input type="password" id="password" name="password" required="required" placeholder="密码"/><br>
+        <input type="email" id="email" name="email" required="required" placeholder="邮箱"/><br>
+        <button type="submit" id="regedit">注册</button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <button type="submit" onclick="back()">返回</button>
+    </form>
+</div>
+</body>
+
+<script type="text/javascript">
+    function back() {
+        history.back(-1);
+    }
+
+    function removeRedStart() {
+        $("#redStart").hide();
+    }
+    //判断用户名是否存在
+    function nameExist() {
+        var username = $("#username").val();
+        if (username!=undefined&&$.trim(username).length>0){
+            $.ajax({
+                url: "/nameExist",
+                type: "post",
+                data: {username:username},
+                async: false,
+                dataType: "json",
+                success: function (data) {
+                    var status = data.code;
+                    if (status != 200) {
+                        alert(data.msg);
+                        $("#redStart").show();
+                    }
+                },
+                error: function (XMLHttpRequest, textStatus, errorThrown) {
+                    alert("登录异常，请联系系统管理员！");
+                }
+            });
+        }
+    }
+
+    function checkLogin() {
+        var username = $("#username").val();
+        var password = $("#password").val();
+        var email = $("#email").val();
+        // var rand=$("#userform input[name=rand]").val();
+        if ($.trim(username).length == 0 || username == "用户名") {
+            alert("用户名不能为空！");
+            return;
+        }
+        if ($.trim(password).length == 0 || password == "密码") {
+            alert("密码不能为空！");
+            return;
+        }
+        var data = {"username": username, "password": password,"email":email};
+        $.ajax({
+            url: "/regedit",
+            type: "post",
+            data: data,
+            async: false,
+            dataType:'json',
+            success: function (data) {
+                var status = data.code;
+                if (status !=200 ) {
+                    alert(data.msg);
+                } else {
+                    window.location.href = "/toLogin";
+                }
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                alert("登录异常，请联系系统管理员！");
+            }
+        });
+        return false;
+    }
+</script>
+</html>

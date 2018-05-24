@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface UserService {
 
-    int addUser();
+    int addUser(User user);
 
     List<User> getUserAll();
 
@@ -19,5 +19,7 @@ public interface UserService {
     List<User> getUserList();
 
     int validationUser(User user);
+
+    int findUsername(String username);
 
 }

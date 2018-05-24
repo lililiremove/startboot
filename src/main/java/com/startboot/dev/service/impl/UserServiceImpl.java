@@ -21,12 +21,12 @@ public class UserServiceImpl implements UserService {
     private UserRepository  userRepository;
 
     @Override
-    public int addUser() {
-        User user = new User();
-        user.setUserid(UUIDGenerator.getUUID(31));
-        user.setUsername("张三");
-        user.setPassword("123456");
-        user.setEmail("123456789@qq.com");
+    public int addUser(User user) {
+//        User user = new User();
+////        user.setUserid(UUIDGenerator.getUUID(31));
+////        user.setUsername("张三");
+////        user.setPassword("123456");
+////        user.setEmail("123456789@qq.com");
         return userMapper.insertSelective(user);
     }
 
@@ -53,9 +53,18 @@ public class UserServiceImpl implements UserService {
     public int validationUser(User user) {
         User userResult = userMapper.selectUserByUsername(user.getUsername());
         if (user!=null&&userResult!=null){
-            if (userResult.getPassword()==user.getPassword()&&user.getPassword().equals(userResult.getPassword())){
+            if (user.getPassword().equals(userResult.getPassword())){
                 return 1;
             }
+        }
+        return 0;
+    }
+
+    @Override
+    public int findUsername(String username) {
+        User user = userMapper.selectUserByUsername(username);
+        if (user!=null){
+            return 1;
         }
         return 0;
     }

@@ -27,6 +27,10 @@ spring:
     encoding: UTF-8
     servlet.content-type: text/html
     cache: false
+  http:
+      encoding:
+        charset: utf-8
+        enabled: true
 
 mybatis:
   mapper-locations: classpath:mapping/*.xml
